@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-
-'use strict';
-
 var cordova_util, ConfigParser;
 (function() {
 	var cordovaLib = 'cordova',

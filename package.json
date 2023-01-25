@@ -1,9 +1,9 @@
 {
-  "name": "cordova9-plugin-app-preferences",
+  "name": "cordova-plugin-app-preferences-bnext",
   "version": "0.99.7",
   "description": "Application preferences plugin and preference pane generator",
   "cordova": {
-    "id": "cordova9-plugin-app-preferences",
+    "id": "cordova-plugin-app-preferences-bnext",
     "platforms": [
       "android",
       "ios",
@@ -22,18 +22,6 @@
   "bin": {
     "cordova-app-preferences-generator": "bin/build-app-settings.js"
   },
-  "devDependencies": {
-    "cordova": ">=5.4.1",
-    "elementtree": "^0.1.6",
-    "ios-sim": ">=5.0.5",
-    "jasmine": "^2.3.2",
-    "q": "^1.4.1",
-    "serve-me": "^0.8.2",
-    "plist": ">=1.2.0",
-    "glob": "^7.1.3",
-    "shelljs": "^0.8.1",
-    "xcode": "^2.0.0"
-  },
   "keywords": [
     "preferences",
     "settings",
@@ -47,6 +35,13 @@
     "cordova-windows8",
     "cordova-blackberry10"
   ],
+  "engines": {
+    "cordovaDependencies": {
+        "9.0.0": {
+            "cordova": ">100"
+        }
+    }
+},
   "author": "Ivan Baktsheev",
   "license": "Apache-2.0",
   "bugs": {

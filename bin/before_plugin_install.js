@@ -1,9 +1,7 @@
-'use strict';
-
-module.exports = function (context) {
-  var path = require ('path'),
+var path = require ('path'),
       pathParse = require ('./lib/path-parse');
 
+module.exports = function (context) {
   path.parse = path.parse || pathParse;
 
   return true;

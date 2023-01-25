@@ -1,7 +1,4 @@
-'use strict';
-
-module.exports = function (context) {
-	var Q = require('q'),
+var Q = require('q'),
 		path = require('path'),
 		ET = require('elementtree'),
 		cordova = require('cordova'),
@@ -10,6 +7,9 @@ module.exports = function (context) {
 		fs = require("./lib/filesystem")(Q, require('fs'), path),
 		settings = require("./lib/settings")(fs, path),
 		platforms = {};
+
+module.exports = function (context) {
+	
 
 	platforms.android = require("./lib/android")(context);
 	platforms.ios = require("./lib/ios")(Q, fs, path, require('plist'), require('xcode'));
