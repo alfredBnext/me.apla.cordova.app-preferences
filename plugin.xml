@@ -12,10 +12,6 @@
 	<repo>https://github.com/apla/me.apla.cordova.app-preferences</repo>
 	<issue>https://github.com/apla/me.apla.cordova.app-preferences/issues</issue>
 
-	<engines>
-        <engine name="cordova" version=">=9.0.0"/>
-    </engines>
-
 	<js-module src="www/apppreferences.js" name="apppreferences">
 		<clobbers target="plugins.appPreferences" />
 	</js-module>
