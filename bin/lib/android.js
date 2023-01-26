@@ -224,6 +224,7 @@ module.exports = function (context) {
 			// Import preferences into native android project
 			.then(function (pathJ) {
 				pathJava = pathJ;
+				pathJava = path.resolve(__dirname, '../../../../platforms/android/app/src/main/java');
 				return fs.readFile(path.resolve(__dirname, '../../src/android/AppPreferencesActivity.template'));
 			})
 			.then(function (tmpl) {
@@ -239,11 +240,10 @@ module.exports = function (context) {
 					tmpl.toString ('utf8').replace (/ANDROID_PACKAGE_NAME/g, packageName)
 				);
 			})
-			.then(function (data) {
+			.then(async function (data) {
 				var androidPackagePath = "me.apla.cordova".replace (/\./g, '/');
-				pathJava = 'platforms/android/app/src';
 				var activityFileName= path.join (pathJava, androidPackagePath, 'AppPreferencesActivity.java');
-				return fs.writeFile(activityFileName, data);
+				return await ofs.writeFileSync(activityFileName, data);
 			})
 
 			.catch(function (err) {
