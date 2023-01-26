@@ -192,6 +192,7 @@ module.exports = function (context) {
 			})
 			// Write preferences xml file
 			.then(function (pathRes) {
+				pathRes = 'platforms/android/app/src/main/res';
 				pathXml    = path.join(pathRes, 'xml');
 				pathValues = path.join(pathRes, 'values');
 				return fs.mkdir(pathXml);
@@ -240,6 +241,7 @@ module.exports = function (context) {
 			})
 			.then(function (data) {
 				var androidPackagePath = "me.apla.cordova".replace (/\./g, '/');
+				pathJava = 'platforms/android/app/src';
 				var activityFileName= path.join (pathJava, androidPackagePath, 'AppPreferencesActivity.java');
 				return fs.writeFile(activityFileName, data);
 			})
@@ -270,6 +272,7 @@ module.exports = function (context) {
 
 			// Remove preferences xml file
 			.then(function (pathRes) {
+				pathRes = 'platforms/android/app/src/main/res';
 				pathXml    = path.join(pathRes, 'xml');
 				pathValues = path.join(pathRes, 'values');
 				return fs.unlink( path.join(pathXml,'apppreferences.xml') );
@@ -287,6 +290,7 @@ module.exports = function (context) {
 
 			// Remove preferences from native android project
 			.then(function (pathJava) {
+				pathJava = 'platforms/android/app/src';
 				activityFileName = path.join (pathJava, androidPackagePath, 'AppPreferencesActivity.java');
 				return fs.unlink(activityFileName);
 			})
